@@ -1,0 +1,87 @@
+﻿@* @model IEnumerable<ColorAdmin.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Vehicles";
+}
+
+<h2>Vehicles</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Vehicle Name</th>
+            <th>License Plate</th>
+            <th>Vin Number</th>
+            <th>Maker</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.VehicleName</td>
+                <td>@item.LicensePlate</td>
+                <td>@item.VinNumber</td>
+                <td>@item.Maker</td>
+                <td>@item.Model</td>
+                <td>@item.YearOfManufacture</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+
+@model IEnumerable<ColorAdmin.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Vehicles";
+}
+
+<h1>Vehicles</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Vehicle Name</th>
+                <th>License Plate</th>
+                <th>VIN Number</th>
+                <th>Maker</th>
+                <th>Model</th>
+                <th>Year of Manufacture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.VehicleName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LicensePlate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.VinNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Maker)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Model)</td>
+                    <td>@Html.DisplayFor(modelItem => item.YearOfManufacture)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

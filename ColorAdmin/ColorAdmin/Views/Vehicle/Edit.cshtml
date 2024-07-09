@@ -1,0 +1,80 @@
+﻿@model ColorAdmin.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Edit Vehicle";
+}
+
+<h2>Edit Vehicle</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="VehicleName" class="control-label"></label>
+        <input asp-for="VehicleName" class="form-control" />
+        <span asp-validation-for="VehicleName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LicensePlate" class="control-label"></label>
+        <input asp-for="LicensePlate" class="form-control" />
+        <span asp-validation-for="LicensePlate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VinNumber" class="control-label"></label>
+        <input asp-for="VinNumber" class="form-control" />
+        <span asp-validation-for="VinNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Maker" class="control-label"></label>
+        <input asp-for="Maker" class="form-control" />
+        <span asp-validation-for="Maker" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model" class="control-label"></label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="YearOfManufacture" class="control-label"></label>
+        <input asp-for="YearOfManufacture" class="form-control" />
+        <span asp-validation-for="YearOfManufacture" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IdentificationCard" class="control-label"></label>
+        <input asp-for="IdentificationCard" class="form-control" />
+        <span asp-validation-for="IdentificationCard" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TypeOfVehicle" class="control-label"></label>
+        <input asp-for="TypeOfVehicle" class="form-control" />
+        <span asp-validation-for="TypeOfVehicle" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MapMarkerColor" class="control-label"></label>
+        <input asp-for="MapMarkerColor" class="form-control" />
+        <span asp-validation-for="MapMarkerColor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MapMarkerSize" class="control-label"></label>
+        <input asp-for="MapMarkerSize" class="form-control" />
+        <span asp-validation-for="MapMarkerSize" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DefaultDriver" class="control-label"></label>
+        <input asp-for="DefaultDriver" class="form-control" />
+        <span asp-validation-for="DefaultDriver" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DefaultDriverPhone" class="control-label"></label>
+        <input asp-for="DefaultDriverPhone" class="form-control" />
+        <span asp-validation-for="DefaultDriverPhone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
